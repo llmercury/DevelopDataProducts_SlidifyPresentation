@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Child Height Prediction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Child Height Prediction">
+  <meta name="author" content="L. M.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Child Height Prediction</h1>
+    <h2>A Shiny Application</h2>
+    <p>L. M.<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <!-- Center image on slide -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+<h2>What&#39;s this Application for?</h2>
+
+<ul>
+<li>This Application is for predicting a child&#39;s height at age 18.</li>
+</ul>
+
+<p><img src="child_height2.jpg" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Features</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p>Simple</p>
+
+<ul>
+<li> No need for <em>Growth Chart</em>, <em>Bone X rays</em>, ......</li>
+<li> Only three parameters needed: Sex of Child, Mother&#39;s Height, and Father&#39;s Height</li>
+</ul>
+
+<p>Accurate</p>
+
+<ul>
+<li> &gt;= 90 percent chance that the real height will be within 2.1 inches of the prediction</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Screenshot</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="screenshot.jpg" alt=""></p>
+
+<ul>
+<li>Input 3 parameters, you will get the results your want!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>How does it Work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Reference</p>
+
+<p>Predicting Adult Stature Without Using Skeletal Age: The Khamis-Roche Method
+by H.J. Khamis and A.F. Roche, Pediatrics, October 1994  </p></li>
+</ul>
+
+<pre><code class="r"># Function of height
+# Mother&#39;s height - mh; Father&#39;s height - fh; Sex of child - sex (sex = 1 for boys, sex = -1 for girl)
+childHeight &lt;- function(sex, mh, fh) {(mh + fh + as.numeric(sex) * 5)/2}
+# Example: A boy&#39;s height prediction
+# mh = 64 inches; fh = 74 inches; sex = 1
+print(h &lt;- childHeight(1, 64, 74))
+</code></pre>
+
+<pre><code>## [1] 71.5
+</code></pre>
+
+<p>Your child&#39;s height will likely be 71.5 inches at age 18!</p>
+
+<p><img src="enjoy.png" alt="">  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Features'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Screenshot'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How does it Work?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
